@@ -12,7 +12,7 @@ import {
 import {RectButton} from 'react-native-gesture-handler';
 import {AgendaEntry} from 'react-native-calendars';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
-import { CalendarContextType } from '../../types/types';
+import {CalendarContextType} from '../../types/types';
 
 import DataContext from '../../context/dataContext';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
