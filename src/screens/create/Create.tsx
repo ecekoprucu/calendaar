@@ -1,11 +1,11 @@
 import React, {useState, useContext, useCallback} from 'react';
 import {
-  View,
   StyleSheet,
   Text,
   TouchableOpacity,
   TextInput,
   Alert,
+  ScrollView,
 } from 'react-native';
 import {AgendaEntry, Calendar} from 'react-native-calendars';
 import DataContext from '../../context/dataContext';
@@ -51,7 +51,7 @@ const Create = () => {
   }, [selectedDate, note, items, addItem]);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Calendar
         onDayPress={day => setSelectedDate(day.dateString)}
         markedDates={setMarkedDate(selectedDate)}
@@ -79,13 +79,14 @@ const Create = () => {
       <TouchableOpacity style={styles.button} onPress={createNote}>
         <Text>Create</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    overflow: 'scroll',
   },
   input: {
     borderWidth: 1,
